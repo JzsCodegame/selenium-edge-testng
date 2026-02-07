@@ -1,0 +1,19 @@
+/target/
+
+.project
+.classpath
+.settings/
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+*.iml
+
+# Java
+*.class
+test-output/
