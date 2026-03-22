@@ -59,7 +59,13 @@ public class EdgeTest {
         driver.findElement(By.cssSelector("#company")).sendKeys("Habib");
         driver.findElement(By.xpath("//*[@id='address1']")).sendKeys("123 Milkyway St");
         driver.findElement(By.xpath("//*[@id='address2']")).sendKeys("Apt 2");
-        driver.findElement(By.xpath("//*[@id='country']")).click();
+        ((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
+        
+        WebElement countryDropdown = driver.findElement(By.xpath("//*[@id='country']"));
+        Select country = new Select (countryDropdown);
+        country.selectByVisibleText("United States");
+        
+        //driver.findElement(By.xpath("//*[@id='country']")).click();
         driver.findElement(By.xpath("//*[@id='state']")).sendKeys("New York");
         driver.findElement(By.xpath("//*[@id='city']")).sendKeys("Brooklyn");
         driver.findElement(By.xpath("//*[@id='zipcode']")).sendKeys("11456");
@@ -70,7 +76,7 @@ public class EdgeTest {
     @AfterClass(alwaysRun = true)
     public void closeBrowser() {
         if (driver != null) {
-            driver.quit();
+            driver.close();
         }
     }
 }
