@@ -23,9 +23,9 @@ public class OpenEdgeTest {
         System.out.println("Title: " + driver.getTitle());
     }
 
-//    @AfterMethod(alwaysRun = true)
-//    public void tearDown() {
-//        if (driver != null) driver.quit();
-//    }
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) driver.quit();
+    }
 }
 
